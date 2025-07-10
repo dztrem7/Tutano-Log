@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body >
+<body>
 
     <!-- Faixa superior -->
     <div class="blue" style="background-color: #267acc; color: white; text-align: center; padding: 10px;">
@@ -65,7 +65,7 @@
 
 
     <!-- Banner -->
-    <section class="banner" >
+    <section class="banner">
         <div class="container banner-container">
             <h1 data-animate>Tutano Log Entrega rápida e segura <br> direto para você</h1>
             <p data-animate>Conte com a Tutano Log para levar seus produtos com agilidade e cuidado.</p>
@@ -89,7 +89,7 @@
     <section class="section section-solucoes">
         <div class="container" data-animate>
             <h2>Soluções sob medida</h2>
-            <div class="services-grid" >
+            <div class="services-grid">
                 <article class="service-card">
                     <h3>Entregas para Igrejas</h3>
                     <p>Transporte de instrumentos, materiais e produtos para eventos e cultos.</p>
@@ -138,7 +138,8 @@
                     <p>Especialista em entregas rápidas e atendimento gentil.</p>
                 </li>
                 <li class="deliverer-item">
-                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg" alt="Foto do entregador Maria" />
+                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg"
+                        alt="Foto do entregador Maria" />
                     <h4>Lucas</h4>
                     <p>Rapido e especialista em entregas e atendimento super otimo</p>
                 </li>
@@ -199,10 +200,13 @@
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
+                    <p class="erro-email" style="display: none; color: red; font-size: 0.85rem; margin-top: 4px;">
+                        Digite um email válido contendo "@"
+                    </p>
 
                     <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required
-                        pattern="\(\d{2}\) \d{5}-\d{4}" />
+                        pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric"/>
                 </fieldset>
 
                 <fieldset>
@@ -216,6 +220,9 @@
 
                     <label for="data_entrega">Data de entrega preferida</label>
                     <input type="date" id="data_entrega" name="data_entrega" required />
+                    <p class="erro-data" style="display: none; color: red; font-size: 0.85rem; margin-top: 4px;">
+                        Escolha uma data válida (hoje ou futura)
+                    </p>
 
                     <label for="hora_entrega">Horário de entrega preferido</label>
                     <select id="hora_entrega" name="hora_entrega" required>
@@ -238,7 +245,7 @@
     </section>
 
     <!-- Contato -->
-    
+
 
     <!-- Chamada final -->
     <section class="section section-finalcta" data-animate>
@@ -256,7 +263,7 @@
                 <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a>
                 </li>
                 <li>Email: <a href="mailto:tutanolog@gmail.com">tutanolog@gmail.com</a></li>
-                
+
             </ul>
         </div>
     </section>
