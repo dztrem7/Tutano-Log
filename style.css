@@ -26,7 +26,7 @@ body {
 
 /* ====== HEADER ====== */
 .header {
-  background-color: #1e1e1e;
+  background-color: black;
   border-bottom: 1px solid #333;
   position: sticky;
   top: 0;
@@ -37,13 +37,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .logo img {
   height: 70px;
   width: auto;
-  border-radius: 50%;
+}
+
+.haha {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
 /* Navegação */
@@ -58,7 +63,7 @@ body {
   color: #bbb;
   font-weight: 600;
   transition: color 0.3s ease;
-  
+
 }
 
 .nav ul li a:hover,
@@ -478,7 +483,7 @@ body {
 
 /* RODAPÉ */
 .footer {
-  background-color: #1a1a1a;
+  background-color: black;
   padding: 30px 20px;
   margin-top: 60px;
   border-top: 1px solid #333;
@@ -656,7 +661,7 @@ body {
 
 /* Hamburger escondido no desktop */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
@@ -668,6 +673,7 @@ body {
   margin-left: 15px;
   margin-right: 20px;
 }
+
 .hamburger span {
   display: block;
   height: 3px;
@@ -679,11 +685,12 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  right: -300px; /* fora da tela */
+  right: -300px;
+  /* fora da tela */
   width: 300px;
   height: 100vh;
   background-color: #121212;
-  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   padding: 20px;
   z-index: 1000;
@@ -694,14 +701,21 @@ body {
   right: 0;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .side-menu nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .side-menu nav ul li {
   margin-bottom: 20px;
 }
+
 .side-menu nav ul li a {
   text-decoration: none;
   color: #fff;
@@ -738,6 +752,7 @@ body {
   .nav {
     display: none;
   }
+
   .hamburger {
     display: flex;
   }
@@ -765,9 +780,11 @@ body {
 }
 
 @media (max-width: 600px) {
+
   .header-container {
     flex-wrap: wrap;
     gap: 15px;
+    padding: 0;
   }
 
   .btn-header {
@@ -820,9 +837,7 @@ body {
     display: none;
   }
 
-  .logo img {
-    display: none;
-  }
+
 
   .header {
     position: relative;
@@ -844,8 +859,7 @@ body {
     max-width: 120px;
   }
 
-  .selo-container img{
+  .selo-container img {
     display: none;
   }
 }
-
