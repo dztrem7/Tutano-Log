@@ -23,24 +23,40 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
   }
 
   // validação de email
-  if (!email.includes('@')) {
+  if (!email.includes('@') || !email.includes('.')) {
     erroEmail.style.display = 'block';
     return;
   } else {
     erroEmail.style.display = 'none';
   }
 
-  // validação de data
+  // validação de telefone (apenas números e pelo menos 10 dígitos)
+  const regexTelefone = /^[0-9]{10,11}$/; // 10 ou 11 dígitos
+  if (!regexTelefone.test(telefone)) {
+    alert('Telefone inválido! Digite apenas números (DDD + número, ex: 11999999999).');
+    return;
+  }
+
+  // validação de data (não pode ser passada e nem muito no futuro)
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0); // zera hora
   const dataSelecionada = new Date(data_entrega);
   dataSelecionada.setHours(0, 0, 0, 0);
 
-  if (dataSelecionada < hoje) {
+  const limiteFuturo = new Date("2100-12-31");
+
+  if (dataSelecionada < hoje || dataSelecionada > limiteFuturo) {
     erroData.style.display = 'block';
     return;
   } else {
     erroData.style.display = 'none';
+  }
+
+  // validação de nome (mínimo 3 caracteres, só letras e espaços)
+  const regexNome = /^[A-Za-zÀ-ÿ\s]{3,}$/;
+  if (!regexNome.test(nome)) {
+    alert('Digite um nome válido (apenas letras e no mínimo 3 caracteres).');
+    return;
   }
 
   // montar mensagem para WhatsApp
@@ -116,6 +132,8 @@ function animarAoScroll() {
 window.addEventListener("scroll", animarAoScroll);
 window.addEventListener("load", animarAoScroll);
 
+
+// === BLOQUEAR LETRAS NO TELEFONE ===
 document.addEventListener('DOMContentLoaded', function () {
   const telefoneInput = document.querySelector('.order-form input[name="telefone"]');
 

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tutano Log - Serviço de Entregas</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,15 +28,13 @@
             </div>
 
             <!-- Botão hamburger -->
-            
-
             <div class="haha">
-                <button class="btn btn-primary btn-header">Faça seu pedido</button>
-            <button class="hamburger" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <a href="#pedido-button" class="btn btn-primary btn-header">Faça seu pedido</a>
+                <button class="hamburger" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -53,7 +56,6 @@
         </nav>
     </aside>
 
-
     <!-- Banner -->
     <section class="banner">
         <div class="container banner-container">
@@ -69,11 +71,8 @@
             <h2 data-animate>Quem somos</h2>
             <p data-animate>A Tutano Log oferece entregas rápidas e seguras para você e seu negócio.</p>
             <p data-animate>Equipe treinada e veículos modernos cuidando do seu pedido.</p>
-
         </div>
     </section>
-
-
 
     <!-- Soluções -->
     <section class="section section-solucoes">
@@ -182,7 +181,7 @@
     <section id="pedido" class="section section-order">
         <div class="container" data-animate>
             <h2>Faça seu pedio agora</h2>
-            <form action="#" method="post" class="order-form" novalidate>
+            <form id="pedido-button" action="#" method="post" class="order-form" novalidate>
                 <fieldset>
                     <legend>Informações pessoais</legend>
                     <label for="nome">Nome completo</label>
@@ -234,9 +233,6 @@
         </div>
     </section>
 
-    <!-- Contato -->
-
-
     <!-- Chamada final -->
     <section class="section section-finalcta" data-animate>
         <div class="container" style="text-align: center;">
@@ -245,6 +241,8 @@
             <a href="https://wa.me/5511941951299" class="btn btn-banner">Falar com a Tutano Log</a>
         </div>
     </section>
+
+    <!-- Contato -->
     <section id="contato" class="section section-contact" data-animate>
         <div class="container">
             <h2>Contato</h2>
@@ -253,7 +251,6 @@
                 <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a>
                 </li>
                 <li>Email: <a href="mailto:tutanolog@gmail.com">tutanolog@gmail.com</a></li>
-
             </ul>
         </div>
     </section>
@@ -266,11 +263,9 @@
             <div class="selo-container">
                 <img src="./img/logo-fooger.png" style="max-height: 50px;">
             </div>
-
         </div>
     </footer>
 
     <script src="./app.js"></script>
 </body>
-
 </html>
