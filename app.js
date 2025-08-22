@@ -9,12 +9,13 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
   const endereco = this.endereco.value.trim();
   const produto = this.produto.value.trim();
   const data_entrega = this.data_entrega.value;
-  const hora_entrega = this.hora_entrega.value;
+  const hora_entrega = this.hora_entrega.value; // agora pega do input time
   const observacoes = this.observacoes.value.trim();
 
   // mensagens de erro visuais
   const erroEmail = document.querySelector('.erro-email');
   const erroData = document.querySelector('.erro-data');
+  const erroHora = document.querySelector('.erro-hora');
 
   // validar campos obrigatórios
   if (!nome || !email || !telefone || !endereco || !produto || !data_entrega || !hora_entrega) {
@@ -59,16 +60,24 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
     return;
   }
 
+  // validação do horário (apenas entre 08:00 e 22:00)
+  if (hora_entrega < "08:00" || hora_entrega > "22:00") {
+    erroHora.style.display = "block";
+    return;
+  } else {
+    erroHora.style.display = "none";
+  }
+
   // montar mensagem para WhatsApp
   let mensagem = `*Pedido feito na Tutano Log*%0A`;
-  mensagem += `Nome: ${nome}%0A`;
-  mensagem += `Email: ${email}%0A`;
-  mensagem += `Telefone: ${telefone}%0A`;
-  mensagem += `Endereço: ${endereco}%0A`;
-  mensagem += `Produto: ${produto}%0A`;
-  mensagem += `Data de entrega: ${data_entrega}%0A`;
-  mensagem += `Horário preferido: ${hora_entrega}%0A`;
-  if (observacoes) mensagem += `Observações: ${observacoes}%0A`;
+  mensagem += `👤 Nome: ${nome}%0A`;
+  mensagem += `📧 Email: ${email}%0A`;
+  mensagem += `📱 Telefone: ${telefone}%0A`;
+  mensagem += `🏠 Endereço: ${endereco}%0A`;
+  mensagem += `📦 Produto: ${produto}%0A`;
+  mensagem += `📅 Data de entrega: ${data_entrega}%0A`;
+  mensagem += `⏰ Horário de entrega: ${hora_entrega}%0A`;
+  if (observacoes) mensagem += `%0A📝 Observações: ${observacoes}`;
 
   const numeroFixo = "5511941951299";
   const urlWhatsapp = `https://wa.me/${numeroFixo}?text=${mensagem}`;
@@ -159,6 +168,38 @@ document.addEventListener('DOMContentLoaded', function () {
       telefoneErro.style.display = 'block';
     } else {
       telefoneErro.style.display = 'none';
+    }
+  });
+});
+
+
+// === REGRAS DE DATA E HORA ===
+document.addEventListener("DOMContentLoaded", () => {
+  const campoData = document.getElementById("data_entrega");
+  const erroData = document.querySelector(".erro-data");
+  const campoHora = document.getElementById("hora_entrega");
+  const erroHora = document.querySelector(".erro-hora");
+
+  // Define o mínimo da data como hoje
+  const hoje = new Date();
+  const yyyy = hoje.getFullYear();
+  const mm = String(hoje.getMonth() + 1).padStart(2, '0');
+  const dd = String(hoje.getDate()).padStart(2, '0');
+  campoData.min = `${yyyy}-${mm}-${dd}`;
+
+  campoData.addEventListener("input", () => {
+    if (campoData.value < campoData.min) {
+      erroData.style.display = "block";
+    } else {
+      erroData.style.display = "none";
+    }
+  });
+
+  campoHora.addEventListener("input", () => {
+    if (campoHora.value < "08:00" || campoHora.value > "22:00") {
+      erroHora.style.display = "block";
+    } else {
+      erroHora.style.display = "none";
     }
   });
 });

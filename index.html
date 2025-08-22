@@ -47,8 +47,6 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#entregadores">Entregadores</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#valores">Valores</a></li>
                 <li><a href="#depoimentos">Depoimentos</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -165,9 +163,6 @@
                 <dt>Qual o prazo médio de entrega?</dt>
                 <dd>Normalmente entre 1 a 4 horas, dependendo da região.</dd>
 
-                <dt>Posso acompanhar meu pedido?</dt>
-                <dd>Sim! Você pode rastrear o pedido em tempo real pelo nosso site.</dd>
-
                 <dt>Qual o horário de atendimento?</dt>
                 <dd>Nosso suporte está disponível 24 horas por dia, 7 dias por semana.</dd>
 
@@ -195,7 +190,7 @@
 
                     <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required
-                        pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric"/>
+                        pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric" />
                 </fieldset>
 
                 <fieldset>
@@ -213,13 +208,13 @@
                         Escolha uma data válida (hoje ou futura)
                     </p>
 
+                    
                     <label for="hora_entrega">Horário de entrega preferido</label>
-                    <select id="hora_entrega" name="hora_entrega" required>
-                        <option value="">Selecione um horário</option>
-                        <option value="manhã">Manhã (8h - 12h)</option>
-                        <option value="tarde">Tarde (12h - 18h)</option>
-                        <option value="noite">Noite (18h - 22h)</option>
-                    </select>
+                    <input type="time" id="hora_entrega" name="hora_entrega" required min="08:00" max="22:00" />
+                    <p class="erro-hora" style="display: none; color: red; font-size: 0.85rem; margin-top: 4px;">
+                        Escolha um horário entre 08:00 e 22:00
+                    </p>
+
                 </fieldset>
 
                 <fieldset>
@@ -268,4 +263,5 @@
 
     <script src="./app.js"></script>
 </body>
+
 </html>
