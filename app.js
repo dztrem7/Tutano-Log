@@ -5,11 +5,11 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
   // pegar dados do formulário
   const nome = this.nome.value.trim();
   const email = this.email.value.trim();
-  const telefone = this.telefone.value.replace(/\D/g, ''); // remove tudo que não é número
+  const telefone = this.telefone.value.trim();
   const endereco = this.endereco.value.trim();
   const produto = this.produto.value.trim();
   const data_entrega = this.data_entrega.value;
-  const hora_entrega = this.hora_entrega.value;
+  const hora_entrega = this.hora_entrega.value; // agora pega do input time
   const observacoes = this.observacoes.value.trim();
 
   // mensagens de erro visuais
@@ -31,8 +31,8 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
     erroEmail.style.display = 'none';
   }
 
-  // validação de telefone (apenas números e 10 ou 11 dígitos)
-  const regexTelefone = /^[0-9]{10,11}$/;
+  // validação de telefone (apenas números e pelo menos 10 dígitos)
+  const regexTelefone = /^[0-9]{10,11}$/; // 10 ou 11 dígitos
   if (!regexTelefone.test(telefone)) {
     alert('Telefone inválido! Digite apenas números (DDD + número, ex: 11999999999).');
     return;
@@ -40,9 +40,10 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
 
   // validação de data (não pode ser passada e nem muito no futuro)
   const hoje = new Date();
-  hoje.setHours(0, 0, 0, 0);
+  hoje.setHours(0, 0, 0, 0); // zera hora
   const dataSelecionada = new Date(data_entrega);
   dataSelecionada.setHours(0, 0, 0, 0);
+
   const limiteFuturo = new Date("2100-12-31");
 
   if (dataSelecionada < hoje || dataSelecionada > limiteFuturo) {
@@ -52,7 +53,7 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
     erroData.style.display = 'none';
   }
 
-  // validação de nome (mínimo 3 caracteres, apenas letras e espaços)
+  // validação de nome (mínimo 3 caracteres, só letras e espaços)
   const regexNome = /^[A-Za-zÀ-ÿ\s]{3,}$/;
   if (!regexNome.test(nome)) {
     alert('Digite um nome válido (apenas letras e no mínimo 3 caracteres).');
@@ -78,8 +79,8 @@ document.querySelector('.order-form').addEventListener('submit', function(e) {
   mensagem += `⏰ Horário de entrega: ${hora_entrega}%0A`;
   if (observacoes) mensagem += `%0A📝 Observações: ${observacoes}`;
 
-  const numeroFixo = "5511941951299"; // seu número do WhatsApp
-  const urlWhatsapp = `https://wa.me/${numeroFixo}?text=${encodeURIComponent(mensagem)}`;
+  const numeroFixo = "5511941951299";
+  const urlWhatsapp = `https://wa.me/${numeroFixo}?text=${mensagem}`;
   window.open(urlWhatsapp, '_blank');
 });
 
