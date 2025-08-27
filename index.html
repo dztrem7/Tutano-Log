@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,9 +11,7 @@
         }
     </style>
 </head>
-
 <body>
-
     <!-- Faixa superior -->
     <div class="blue" style="background-color: #267acc; color: white; text-align: center; padding: 10px;">
         <strong>Entregamos para igrejas, comércios e muito mais! Confiança e agilidade na sua porta.</strong>
@@ -26,11 +23,9 @@
             <div class="logo">
                 <img src="./img/logo-2.png" alt="Logo Tutano Log" />
             </div>
-
-            <!-- Botão hamburger -->
             <div class="haha">
-                <a href="#pedido-button" class="btn btn-primary btn-header">Faça seu pedido</a>
-                <button class="hamburger" aria-label="Abrir menu">
+                <a href="#pedido-button" class="btn btn-primary btn-header">Solicitar retirada</a>
+                <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="side-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -39,8 +34,8 @@
         </div>
     </header>
 
-    <!-- Menu lateral para abrir quando clicar -->
-    <aside class="side-menu">
+    <!-- Menu lateral -->
+    <aside id="side-menu" class="side-menu" aria-hidden="true">
         <button class="close-menu" aria-label="Fechar menu">&times;</button>
         <nav>
             <ul>
@@ -57,9 +52,9 @@
     <!-- Banner -->
     <section class="banner">
         <div class="container banner-container">
-            <h1 data-animate>Tutano Log Entrega rápida e segura <br> direto para você</h1>
-            <p data-animate>Conte com a Tutano Log para levar seus produtos com agilidade e cuidado.</p>
-            <a data-animate href="#pedido" class="btn btn-primary btn-banner1">Peça agora</a>
+            <h1 data-animate>TUTANOLOG - Entrega rápida e segura direto para você</h1>
+            <p data-animate>Conte com a Tutano Log para levar suas encomendas com agilidade e cuidado.</p>
+            <a data-animate href="#pedido" class="btn btn-primary btn-banner1">Solicitar agora</a>
         </div>
     </section>
 
@@ -78,16 +73,19 @@
             <h2>Soluções sob medida</h2>
             <div class="services-grid">
                 <article class="service-card">
-                    <h3>Entregas para Igrejas</h3>
-                    <p>Transporte de instrumentos, materiais e produtos para eventos e cultos.</p>
+                    <img class="image-service-card" src="https://emiteai.com.br/wp-content/uploads/2023/07/controle-de-entregas.jpg" alt="Controle de entregas" />
+                    <h3>Pequenas e Médias Cargas</h3>
+                    <p>Ideal para empresas locais e prestadores de serviço que precisam de agilidade.</p>
                 </article>
                 <article class="service-card">
+                    <img class="image-service-card" src="https://cdn.prod.website-files.com/5e1cab8214cecfc49d37df0a/626daa738e5d378d4a3ce0e2_controle%20de%20entregas.jpg" alt="Coletas agendadas" />
                     <h3>Coletas Agendadas</h3>
                     <p>Marcamos o horário com você e buscamos sua encomenda onde precisar.</p>
                 </article>
                 <article class="service-card">
-                    <h3>Pequenas e Médias Cargas</h3>
-                    <p>Ideal para empresas locais e prestadores de serviço que precisam de agilidade.</p>
+                    <img class="image-service-card" src="https://gftransportes.com.br/wp-content/uploads/2017/05/Entrega-agendada-846x563.jpg" alt="Entregas para igrejas" />
+                    <h3>Entregas para Igrejas</h3>
+                    <p>Transporte de instrumentos, materiais e produtos para eventos e cultos.</p>
                 </article>
             </div>
         </div>
@@ -100,15 +98,15 @@
             <div class="services-grid">
                 <article class="service-card">
                     <h3>Entrega Expressa</h3>
-                    <p>Receba seu pedido em poucas horas na sua casa ou empresa, com total segurança.</p>
+                    <p>Receba sua encomenda em poucas horas com total segurança.</p>
                 </article>
                 <article class="service-card">
                     <h3>Suporte 24 horas</h3>
-                    <p>Estamos disponíveis para tirar dúvidas e solucionar problemas a qualquer momento.</p>
+                    <p>Estamos disponíveis para tirar dúvidas e resolver problemas a qualquer momento.</p>
                 </article>
                 <article class="service-card">
                     <h3>Entrega personalizada</h3>
-                    <p>Adapte a entrega conforme suas necessidades, com horários e locais específicos.</p>
+                    <p>Adapte a entrega conforme sua necessidade, com horários e locais específicos.</p>
                 </article>
             </div>
         </div>
@@ -121,14 +119,13 @@
             <ul class="deliverers-list">
                 <li class="deliverer-item">
                     <img src="./img/teste2.jpg" alt="Foto do entregador Jeferson" />
-                    <h4>Jeferon Costa</h4>
-                    <p>Especialista em entregas rápidas e atendimento gentil.</p>
+                    <h4>Jeferson Costa</h4>
+                    <p>Com anos de experiência, Jeferson é conhecido pela pontualidade e cuidado extremo em cada entrega.</p>
                 </li>
                 <li class="deliverer-item">
-                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg"
-                        alt="Foto do entregador Lucas" />
-                    <h4>Lucas</h4>
-                    <p>Rapido e especialista em entregas e atendimento super otimo</p>
+                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg" alt="Foto do entregador Lucas" />
+                    <h4>Lucas Silva</h4>
+                    <p>Lucas combina rapidez e atenção aos detalhes para garantir que suas encomendas cheguem sempre perfeitas.</p>
                 </li>
             </ul>
         </div>
@@ -162,12 +159,10 @@
             <dl>
                 <dt>Qual o prazo médio de entrega?</dt>
                 <dd>Normalmente entre 1 a 4 horas, dependendo da região.</dd>
-
                 <dt>Qual o horário de atendimento?</dt>
                 <dd>Nosso suporte está disponível 24 horas por dia, 7 dias por semana.</dd>
-
-                <dt>Quais formas de pagamento aceitam?</dt>
-                <dd>Cartoes de debito, credito PIX e dinheiro na entrega.</dd>
+                <dt>Quais formas de pagamento são aceitas?</dt>
+                <dd>Cartões de débito, crédito, PIX e dinheiro.</dd>
             </dl>
         </div>
     </section>
@@ -175,12 +170,12 @@
     <!-- Pedido -->
     <section id="pedido" class="section section-order">
         <div class="container" data-animate>
-            <h2>Faça seu pedio agora</h2>
+            <h2>Solicite uma retirada</h2>
             <form id="pedido-button" action="#" method="post" class="order-form" novalidate>
                 <fieldset>
-                    <legend>Informações pessoais</legend>
+                    <legend>Informações de contato</legend>
                     <label for="nome">Nome completo</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required minlength="3" />
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required minlength="3" />
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
@@ -189,41 +184,33 @@
                     </p>
 
                     <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required
-                        pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric" />
+                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric" />
                 </fieldset>
 
                 <fieldset>
-                    <legend>Detalhes do pedido</legend>
-                    <label for="endereco">Endereço para entrega</label>
-                    <textarea id="endereco" name="endereco" rows="3" placeholder="Rua, número, bairro, cidade"
-                        required></textarea>
+                    <legend>Detalhes da retirada</legend>
+                    <label for="produto">O que será retirado?</label>
+                    <input type="text" id="produto" name="produto" placeholder="Descreva o item ou material" required />
 
-                    <label for="produto">Produto desejado</label>
-                    <input type="text" id="produto" name="produto" placeholder="O que deseja pedir?" required />
-
-                    <label for="data_entrega">Data de entrega preferida</label>
-                    <input type="date" id="data_entrega" name="data_entrega" required />
+                    <label for="data_retirada">Data desejada</label>
+                    <input type="date" id="data_retirada" name="data_retirada" required />
                     <p class="erro-data" style="display: none; color: red; font-size: 0.85rem; margin-top: 4px;">
                         Escolha uma data válida (hoje ou futura)
                     </p>
 
-                    
-                    <label for="hora_entrega">Horário de entrega preferido</label>
-                    <input type="time" id="hora_entrega" name="hora_entrega" required min="08:00" max="22:00" />
+                    <label for="hora_retirada">Horário preferido</label>
+                    <input type="time" id="hora_retirada" name="hora_retirada" required min="08:00" max="22:00" />
                     <p class="erro-hora" style="display: none; color: red; font-size: 0.85rem; margin-top: 4px;">
                         Escolha um horário entre 08:00 e 22:00
                     </p>
-
                 </fieldset>
 
                 <fieldset>
                     <legend>Observações</legend>
-                    <textarea id="observacoes" name="observacoes" rows="4"
-                        placeholder="Deixe aqui alguma observação ou pedido especial"></textarea>
+                    <textarea id="observacoes" name="observacoes" rows="4" placeholder="Alguma observação adicional? (ex: quem irá retirar, tipo de embalagem etc.)"></textarea>
                 </fieldset>
 
-                <button type="submit" class="btn btn-primary btn-submit">Enviar pedido</button>
+                <button type="submit" class="btn btn-primary btn-submit">Enviar solicitação</button>
             </form>
         </div>
     </section>
@@ -231,9 +218,9 @@
     <!-- Chamada final -->
     <section class="section section-finalcta" data-animate>
         <div class="container" style="text-align: center;">
-            <h2>Pronto para fazer seu pedido?</h2>
+            <h2>Pronto para agendar sua retirada?</h2>
             <p>Entre em contato conosco agora mesmo pelo WhatsApp.</p>
-            <a href="https://wa.me/5511941951299" class="btn btn-banner">Falar com a Tutano Log</a>
+            <a href="https://wa.me/5511941951299" class="btn btn-banner" target="_blank" rel="noopener">Falar com a Tutano Log</a>
         </div>
     </section>
 
@@ -243,8 +230,7 @@
             <h2>Contato</h2>
             <p>Fale com a gente pelo WhatsApp, email ou redes sociais:</p>
             <ul class="contact-list">
-                <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a>
-                </li>
+                <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a></li>
                 <li>Email: <a href="mailto:tutanolog@gmail.com">tutanolog@gmail.com</a></li>
             </ul>
         </div>
@@ -256,12 +242,11 @@
             <p>&copy; 2025 Tutano Log. Todos os direitos reservados.</p>
             <p>CNPJ: 61.451.089/0001-05 | São Paulo - SP</p>
             <div class="selo-container">
-                <img src="./img/logo-fooger.png" style="max-height: 50px;">
+                <img src="./img/logo-fooger.png" alt="Selo Fooger" style="max-height: 50px;" />
             </div>
         </div>
     </footer>
 
     <script src="./app.js"></script>
 </body>
-
 </html>

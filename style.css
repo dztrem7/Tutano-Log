@@ -407,6 +407,24 @@ body {
   font-family: inherit;
 }
 
+.image-service-card {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  image-rendering: auto;
+  display: block;
+  filter: brightness(1.05) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.image-service-card:hover {
+  filter: brightness(1.1) contrast(1.1);
+  transform: scale(1.02);
+}
+
 .order-form input::placeholder,
 .order-form textarea::placeholder {
   color: #666;
@@ -863,3 +881,4 @@ body {
     display: none;
   }
 }
+
