@@ -203,3 +203,152 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// === MODAL DE DETALHES DOS CARDS ===
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.service-card');
+  const modal = document.getElementById('card-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeModal = document.getElementById('close-modal');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Pega título, imagem e descrição do card clicado
+      const titulo = card.querySelector('h3').innerText;
+      const imagemSrc = card.querySelector('img').src;
+      const descricao = card.querySelector('p').innerText;
+
+      // Insere no modal
+      modalContent.innerHTML = `
+        <h3>${titulo}</h3>
+        <img src="${imagemSrc}" alt="${titulo}" style="width:100%; margin:10px 0;" />
+        <p>${descricao}</p>
+      `;
+
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Fechar clicando fora do conteúdo
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+
+// === PREENCHE FORM AO CLICAR EM UM CARD ===
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.service-card');
+  const formServicoInput = document.getElementById('servico_escolhido');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const titulo = card.querySelector('h3').innerText;
+
+      // Preenche o input hidden do form
+      formServicoInput.value = titulo;
+
+      // Opcional: se quiser, abre o modal também
+      const modal = document.getElementById('card-modal');
+      const modalContent = document.getElementById('modal-content');
+      const closeModal = document.getElementById('close-modal');
+
+      const imagemSrc = card.querySelector('img').src;
+      const descricao = card.querySelector('p').innerText;
+
+      modalContent.innerHTML = `
+        <h3>${titulo}</h3>
+        <img src="${imagemSrc}" alt="${titulo}" style="width:100%; margin:10px 0;" />
+        <p>${descricao}</p>
+      `;
+
+      modal.style.display = 'flex';
+
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+    });
+  });
+});
+
+// === BOTÃO DO CARD PARA IR AO FORMULÁRIO ===
+document.addEventListener('DOMContentLoaded', () => {
+  const botaoCards = document.querySelectorAll('.btn-solicitar');
+  const formServicoInput = document.getElementById('servico_escolhido');
+  const formSection = document.getElementById('pedido-button');
+
+  botaoCards.forEach(botao => {
+    botao.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita que abra o modal se clicar no botão dentro do card
+      const card = botao.closest('.service-card');
+      const titulo = card.querySelector('h3').innerText;
+
+      // Preenche o input oculto do form
+      formServicoInput.value = titulo;
+
+      // Rola suavemente até o formulário
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.service-card');
+  const modal = document.getElementById('card-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeModal = document.getElementById('close-modal');
+  const formServicoInput = document.getElementById('servico_escolhido');
+  const formSection = document.getElementById('pedido-button');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const titulo = card.querySelector('h3').innerText;
+      const imagemSrc = card.querySelector('img').src;
+      const descricao = card.querySelector('p').innerText;
+
+      // Conteúdo do modal + botão dinâmico
+      modalContent.innerHTML = `
+        <h3>${titulo}</h3>
+        <img src="${imagemSrc}" alt="${titulo}" style="width:100%; margin:10px 0; border-radius:8px;" />
+        <p style="color: white ">${descricao}</p>
+        <button id="btn-modal-solicitar" style="background-color: #3399ff;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 8px #3399ffaa; margin-top: 20px; font-size: 15px">Solicitar este serviço</button>
+      `;
+
+      modal.style.display = 'flex';
+
+      // Botão dentro do modal
+      const btnSolicitar = document.getElementById('btn-modal-solicitar');
+      btnSolicitar.addEventListener('click', () => {
+        formServicoInput.value = titulo;             // Preenche o form
+        modal.style.display = 'none';                // Fecha o modal
+        formSection.scrollIntoView({ behavior: 'smooth' }); // Rola pro form
+      });
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +12,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Faixa superior -->
     <div class="blue" style="background-color: #267acc; color: white; text-align: center; padding: 10px;">
@@ -60,10 +62,11 @@
 
     <!-- Sobre -->
     <section id="sobre" class="section section-about">
-        <div class="container">
-            <h2 data-animate>Quem somos</h2>
-            <p data-animate>A Tutano Log oferece entregas rápidas e seguras para você e seu negócio.</p>
-            <p data-animate>Equipe treinada e veículos modernos cuidando do seu pedido.</p>
+        <div class="container" class="center">
+            <h2 data-animate>Sobre nós</h2>
+            <p data-animate>A TUTANOLOG nasceu para oferecer soluções completas em mobilidade segura, tanto no
+                transporte de mercadorias especias quanto no acompanhamento pessoal e segurança, no transporte executivo.</p>
+            <p data-animate>Nosso compromisso é com a confiança, pontualidade e segurança, seja levando sua encomenda ou conduzindo você e sua família.</p>
         </div>
     </section>
 
@@ -73,19 +76,33 @@
             <h2>Soluções sob medida</h2>
             <div class="services-grid">
                 <article class="service-card">
-                    <img class="image-service-card" src="https://emiteai.com.br/wp-content/uploads/2023/07/controle-de-entregas.jpg" alt="Controle de entregas" />
+                    <img class="image-service-card"
+                        src="https://emiteai.com.br/wp-content/uploads/2023/07/controle-de-entregas.jpg"
+                        alt="Controle de entregas" />
                     <h3>Pequenas e Médias Cargas</h3>
-                    <p>Ideal para empresas locais e prestadores de serviço que precisam de agilidade.</p>
+                    <p>Transportamos pequenos, médios e grandes volumes, incluindo animais vivos e todos os tipos de cargas permitidas, tanto no modal aéreo quanto no terrestre.</p>
                 </article>
+                
                 <article class="service-card">
-                    <img class="image-service-card" src="https://cdn.prod.website-files.com/5e1cab8214cecfc49d37df0a/626daa738e5d378d4a3ce0e2_controle%20de%20entregas.jpg" alt="Coletas agendadas" />
+                    <img class="image-service-card"
+                        src="https://cdn.prod.website-files.com/5e1cab8214cecfc49d37df0a/626daa738e5d378d4a3ce0e2_controle%20de%20entregas.jpg"
+                        alt="Coletas agendadas" />
                     <h3>Coletas Agendadas</h3>
                     <p>Marcamos o horário com você e buscamos sua encomenda onde precisar.</p>
                 </article>
                 <article class="service-card">
-                    <img class="image-service-card" src="https://gftransportes.com.br/wp-content/uploads/2017/05/Entrega-agendada-846x563.jpg" alt="Entregas para igrejas" />
+                    <img class="image-service-card"
+                        src="https://gftransportes.com.br/wp-content/uploads/2017/05/Entrega-agendada-846x563.jpg"
+                        alt="Entregas para igrejas" />
                     <h3>Entregas para Igrejas</h3>
                     <p>Transporte de instrumentos, materiais e produtos para eventos e cultos.</p>
+                </article>
+                <article class="service-card">
+                    <img class="image-service-card"
+                        src="https://gosafebrazil.com/wp-content/uploads/2019/06/Security-Driver-Gosafe-Brazil.jpg"
+                        alt="Entregas para igrejas" />
+                    <h3>Serviços de Motorista Executivo & Segurança Pessoal</h3>
+                    <p>Oferecemos um serviço de transporte seguro, pontual e confortável, com total discrição e atenção às necessidades do cliente.</p>
                 </article>
             </div>
         </div>
@@ -119,13 +136,15 @@
             <ul class="deliverers-list">
                 <li class="deliverer-item">
                     <img src="./img/teste2.jpg" alt="Foto do entregador Jeferson" />
-                    <h4>Jeferson Costa</h4>
-                    <p>Com anos de experiência, Jeferson é conhecido pela pontualidade e cuidado extremo em cada entrega.</p>
+                    <h4>Jeferson Oliveira</h4>
+                    <p>Com anos de experiência na área logística aeroportuária, com conhecimentos de todos os tipos de  modais para embarque de cargas.</p>
                 </li>
                 <li class="deliverer-item">
-                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg" alt="Foto do entregador Lucas" />
+                    <img src="./img/Imagem do WhatsApp de 2025-07-09 à(s) 18.58.43_6d4cfb3c.jpg"
+                        alt="Foto do entregador Lucas" />
                     <h4>Lucas Silva</h4>
-                    <p>Lucas combina rapidez e atenção aos detalhes para garantir que suas encomendas cheguem sempre perfeitas.</p>
+                    <p>Lucas combina rapidez e atenção aos detalhes para garantir que suas encomendas cheguem sempre
+                        perfeitas.</p>
                 </li>
             </ul>
         </div>
@@ -172,10 +191,13 @@
         <div class="container" data-animate>
             <h2>Solicite uma retirada</h2>
             <form id="pedido-button" action="#" method="post" class="order-form" novalidate>
+                <input type="hidden" id="servico_escolhido" name="servico_escolhido" value="">
+
                 <fieldset>
                     <legend>Informações de contato</legend>
                     <label for="nome">Nome completo</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required minlength="3" />
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required
+                        minlength="3" />
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
@@ -184,7 +206,8 @@
                     </p>
 
                     <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric" />
+                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required
+                        pattern="\(\d{2}\) \d{5}-\d{4}" inputmode="numeric" />
                 </fieldset>
 
                 <fieldset>
@@ -207,7 +230,8 @@
 
                 <fieldset>
                     <legend>Observações</legend>
-                    <textarea id="observacoes" name="observacoes" rows="4" placeholder="Alguma observação adicional? (ex: quem irá retirar, tipo de embalagem etc.)"></textarea>
+                    <textarea id="observacoes" name="observacoes" rows="4"
+                        placeholder="Alguma observação adicional? (ex: quem irá retirar, tipo de embalagem etc.)"></textarea>
                 </fieldset>
 
                 <button type="submit" class="btn btn-primary btn-submit">Enviar solicitação</button>
@@ -220,7 +244,8 @@
         <div class="container" style="text-align: center;">
             <h2>Pronto para agendar sua retirada?</h2>
             <p>Entre em contato conosco agora mesmo pelo WhatsApp.</p>
-            <a href="https://wa.me/5511941951299" class="btn btn-banner" target="_blank" rel="noopener">Falar com a Tutano Log</a>
+            <a href="https://wa.me/5511941951299" class="btn btn-banner" target="_blank" rel="noopener">Falar com a
+                Tutano Log</a>
         </div>
     </section>
 
@@ -230,7 +255,8 @@
             <h2>Contato</h2>
             <p>Fale com a gente pelo WhatsApp, email ou redes sociais:</p>
             <ul class="contact-list">
-                <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a></li>
+                <li>WhatsApp: <a href="https://wa.me/5511941951299" target="_blank" rel="noopener">+55 11 94195-1299</a>
+                </li>
                 <li>Email: <a href="mailto:tutanolog@gmail.com">tutanolog@gmail.com</a></li>
             </ul>
         </div>
@@ -247,6 +273,16 @@
         </div>
     </footer>
 
+     <div id="card-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); justify-content:center; align-items:center">
+      <div style="color: #3399ff; background:#1e1e1e; padding:20px; max-width:500px; width:90%; border-radius:8px; position:relative; padding-top: 20px">
+        <button id="close-modal" style=" position:absolute; top:10px; right:10px; background:#1e1e1e; border: none; color: white;">&times;</button>
+        <div id="modal-content" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <!-- Conteúdo do card será inserido aqui -->
+        </div>
+      </div>
+    </div>
+
     <script src="./app.js"></script>
 </body>
+
 </html>
